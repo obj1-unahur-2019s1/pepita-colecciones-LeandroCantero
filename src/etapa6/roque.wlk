@@ -32,4 +32,8 @@ object roque {
 	method pupilosCapacesDeVolar(unosKms){
 		return coleccionAves.filter({pupilos => pupilos.puedeVolar(unosKms)})
 	}
+	
+	method pupilosFortachones(){
+		return coleccionAves.filter({pupilos => pupilos.energia()>100})
+	}
 }
