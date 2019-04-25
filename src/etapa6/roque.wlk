@@ -34,6 +34,6 @@ object roque {
 	}
 	
 	method pupilosFortachones(){
-		return coleccionAves.filter({pupilos => pupilos.energia()>100})
+		return coleccionAves.filter({pupilos => pupilos.energia()>99})
 	}
 }
