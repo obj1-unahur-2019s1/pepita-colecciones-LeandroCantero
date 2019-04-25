@@ -3,17 +3,33 @@ import comidas.*
 import masAves.*
 
 object roque {
-	var pupilo
+	//var pupilo
+	var coleccionAves = []
 	
-	method tuPupiloEs(ave) { 
+	/*method tuPupiloEs(ave) { 
 		pupilo = ave
-	} 
-	method pupiloActual() { return pupilo }
+	}*/ 
+	//method pupiloActual() { return pupilo }
 
-	method entrenar() { 
+	method entrenar() {
+		coleccionAves.forEach({pupilo => 
 		pupilo.volar(10)
 		pupilo.comer(alpiste,30)
 		pupilo.volar(5)
-		pupilo.haceLoQueQuieras()
-	} 
+		pupilo.haceLoQueQuieras()})
+	}
+		
+	method agregarPupilo(unAve){
+		coleccionAves.add(unAve)	
+	}
+	
+	method dejarPupilo(unAve){
+		coleccionAves.remove(unAve)		
+	}
+	
+	method cuantosPupilosTiene(){return coleccionAves.size()}
+	
+	method pupilosCapacesDeVolar(unosKms){
+		return coleccionAves.filter({pupilos => pupilos.puedeVolar(unosKms)})
+	}
 }
